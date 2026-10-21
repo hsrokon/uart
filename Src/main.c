@@ -12,4 +12,7 @@ int main(void)
 
 	//Baud Rate Calculation for 9600 | 8MHz/(16x9600)=52.08333
 	USART1->BRR = 0x341; //DIV_Mantissa,52=0x34. DIV_Fraction,0.0833x16=1.3333 eq. to 1 =0x1.
+
+	//USART Control Register Enabling
+	USART1->CR1 |= (1<<13)|(1<<3)|(1<<2); //UE,TE,RE Enabled.
 }
